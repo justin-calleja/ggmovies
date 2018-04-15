@@ -6,14 +6,14 @@ import PoweredBy from './PoweredBy';
 import TmdbStacked from './TmdbStacked';
 
 const TheMovieDB = () => (
-    <Link to="https://www.themoviedb.org/" target="_blank">
+    <a target="_blank" rel="noopener noreferrer" href="https://www.themoviedb.org/">
         <Hidden only={['xs']}>
             <PoweredBy />
         </Hidden>
         <Hidden only={['sm', 'md', 'lg', 'xl']}>
             <TmdbStacked />
         </Hidden>
-    </Link>
+    </a>
 );
 
 export default TheMovieDB;
