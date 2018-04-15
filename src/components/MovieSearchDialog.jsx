@@ -6,6 +6,7 @@ import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
 import withWidth from 'material-ui/utils/withWidth';
 
+import Autocomplete from './Autocomplete';
 import MovieSearchStore from '../stores/MovieSearchStore';
 
 const styles = theme => ({
@@ -40,6 +41,9 @@ class MovieSearchDialog extends Component {
                 <DialogTitle className={widthGreaterThanSM ? classes.dialogTitle : undefined}>
                     Search movies
                 </DialogTitle>
+                <DialogContent>
+                    <Autocomplete movieSearchStore={movieSearchStore} />
+                </DialogContent>
                 <DialogActions>
                     <Button onClick={movieSearchStore.dialog.hide} color="primary">
                         Dismiss
