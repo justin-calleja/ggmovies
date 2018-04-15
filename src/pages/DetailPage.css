@@ -1,0 +1,14 @@
+@media only screen and (min-width: 960px) {
+  .Detail-movie-container-image {
+    height: 85vh;
+  }
+
+  .Detail-movie-container-text__title {
+    text-align: left;
+  }
+
+  .Detail-movie-container-text__overview {
+    text-align: left;
+    margin-bottom: 1.5em;
+  }
+}

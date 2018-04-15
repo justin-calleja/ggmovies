@@ -9,6 +9,7 @@ import blueGrey from 'material-ui/colors/blueGrey';
 import green from 'material-ui/colors/green';
 import CssBaseline from 'material-ui/CssBaseline';
 
+import AppPage from './pages/AppPage';
 import AppBar from './components/AppBar';
 import MovieSearchDialog from './components/MovieSearchDialog';
 import appStore from './stores/index';
@@ -39,6 +40,7 @@ ReactDOM.render(
                             movieSearchStore={appStore.movieSearch}
                             detailPageStore={appStore.detailPage}
                         />
+                        <AppPage detailPageStore={appStore.detailPage} />
                     </React.Fragment>
                 </Router>
             </Provider>
