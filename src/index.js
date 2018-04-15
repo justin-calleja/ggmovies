@@ -35,7 +35,10 @@ ReactDOM.render(
                 <Router>
                     <React.Fragment>
                         <AppBar movieSearchStore={appStore.movieSearch} />
-                        <MovieSearchDialog movieSearchStore={appStore.movieSearch} />
+                        <MovieSearchDialog
+                            movieSearchStore={appStore.movieSearch}
+                            detailPageStore={appStore.detailPage}
+                        />
                     </React.Fragment>
                 </Router>
             </Provider>

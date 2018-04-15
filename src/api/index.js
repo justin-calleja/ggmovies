@@ -28,3 +28,12 @@ export function searchMovie(searchStr = '') {
     }
     return _init(initArgs);
 }
+
+export function movieDetails(id) {
+    if (!id) {
+        throw new Error('Cannot get movie details without an id');
+    }
+
+    const initArgs = { resourcePath: `/movie/${id}` };
+    return _init(initArgs);
+}

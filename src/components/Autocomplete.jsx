@@ -16,6 +16,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/switchMap';
 
 import MovieSearchStore from '../stores/MovieSearchStore';
+import DetailPageStore from '../stores/DetailPageStore';
 
 const styles = theme => ({
     container: {
@@ -41,12 +42,21 @@ const styles = theme => ({
     },
 });
 
-const Suggestions = withRouter(({ suggestions, history, classes, movieSearchStore }) => (
+const Suggestions = withRouter(({ suggestions, history, classes, movieSearchStore, detailPageStore }) => (
     <Paper className={classes.paper} square>
         {suggestions.map((movie, index) => (
             <MenuItem
                 onClick={() => {
                     movieSearchStore.dialog.hide();
+
+                    detailPageStore.mutate({
+                        title: movie.title,
+                        overview: movie.overview,
+                        imgPath: movie.poster_path || movie.backdrop_path,
+                    });
+                    detailPageStore.fetch(movie.id);
+
+                    history.push(`/movie/${movie.id}`);
                 }}
                 className={classes.menuItem}
                 key={movie.id}
@@ -62,6 +72,7 @@ class Autocomplete extends Component {
     static propTypes = {
         classes: PropTypes.object.isRequired,
         movieSearchStore: PropTypes.instanceOf(MovieSearchStore).isRequired,
+        detailPageStore: PropTypes.instanceOf(DetailPageStore).isRequired,
         debounceTimeBy: PropTypes.number,
     };
 
@@ -89,7 +100,7 @@ class Autocomplete extends Component {
     }
 
     render() {
-        const { classes, movieSearchStore } = this.props;
+        const { classes, movieSearchStore, detailPageStore } = this.props;
         return (
             <div className={classes.container}>
                 <TextField
@@ -111,6 +122,7 @@ class Autocomplete extends Component {
                 ) : movieSearchStore.loadable.safeFulfilled ? (
                     <Suggestions
                         movieSearchStore={movieSearchStore}
+                        detailPageStore={detailPageStore}
                         suggestions={movieSearchStore.loadable.data.results}
                         classes={classes}
                     />
