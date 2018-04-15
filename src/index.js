@@ -10,6 +10,7 @@ import green from 'material-ui/colors/green';
 import CssBaseline from 'material-ui/CssBaseline';
 
 import AppBar from './components/AppBar';
+import MovieSearchDialog from './components/MovieSearchDialog';
 import appStore from './stores/index';
 
 const generateClassName = createGenerateClassName();
@@ -34,6 +35,7 @@ ReactDOM.render(
                 <Router>
                     <React.Fragment>
                         <AppBar movieSearchStore={appStore.movieSearch} />
+                        <MovieSearchDialog movieSearchStore={appStore.movieSearch} />
                     </React.Fragment>
                 </Router>
             </Provider>
