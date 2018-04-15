@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { create } from 'jss';
