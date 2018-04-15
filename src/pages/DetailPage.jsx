@@ -117,7 +117,8 @@ class DetailPage extends Component {
             match,
             detailPageStore: { loadable, fetch },
         } = this.props;
-        if (loadable.idle) {
+
+        if (loadable.idle || !loadable.pending) {
             fetch(match.params.id);
         }
     }

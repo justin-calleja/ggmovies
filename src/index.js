@@ -41,7 +41,7 @@ ReactDOM.render(
                             movieSearchStore={appStore.movieSearch}
                             detailPageStore={appStore.detailPage}
                         />
-                        <AppPage detailPageStore={appStore.detailPage} />
+                        <AppPage />
                     </React.Fragment>
                 </Router>
             </Provider>

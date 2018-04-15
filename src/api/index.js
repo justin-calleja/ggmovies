@@ -37,3 +37,8 @@ export function movieDetails(id) {
     const initArgs = { resourcePath: `/movie/${id}` };
     return _init(initArgs);
 }
+
+export function discover(page = 1) {
+    const initArgs = { resourcePath: '/discover/movie', query: { page } };
+    return _init(initArgs);
+}
