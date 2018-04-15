@@ -2,6 +2,7 @@
   "name": "ggmovies",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://justin-calleja.github.io/ggmovies",
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.42",
     "material-ui": "^1.0.0-beta.41",
@@ -15,6 +16,8 @@
     "rxjs": "^5.5.10"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -23,6 +26,7 @@
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
+    "gh-pages": "^1.1.0",
     "prettier": "^1.12.0"
   }
 }
