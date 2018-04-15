@@ -3,14 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/icons": "^1.0.0-beta.42",
+    "material-ui": "^1.0.0-beta.41",
+    "mobx": "^4.1.1",
+    "mobx-react": "^5.0.0",
+    "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-scripts": "1.1.4"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "rxjs": "^5.5.10"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.12.0"
   }
 }
