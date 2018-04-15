@@ -18,7 +18,8 @@ const generateClassName = createGenerateClassName();
 const jss = create(jssPreset());
 // We define a custom insertion point that JSS will look for injecting the styles in the DOM.
 // Styles injected by Webpack (CSS Modules) will now happen after the JSS ones (therefore having a higher precedence).
-jss.options.insertionPoint = 'jss-insertion-point';
+// Note: CRA will strip comments in index.html page when going live i.e. insertion point should be a DOM element (other than a comment).
+jss.options.insertionPoint = document.getElementById('jss-insertion-point');
 
 export const theme = createMuiTheme({
     palette: {
