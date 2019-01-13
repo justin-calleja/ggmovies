@@ -1,3 +1,5 @@
+[https://justin-calleja.github.io/ggmovies/#/discover/1](https://justin-calleja.github.io/ggmovies/#/discover/1)
+
 ## Decisions made along the way
 
 I decided to use Mobx for state management as I think using Redux would have taken me more time.
